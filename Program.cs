@@ -149,7 +149,7 @@ foreach (int items in inventory)
 Console.WriteLine($"We have {sum} items in inventory.");*/
 
 
-string[] sahtesipariskimligi = {"B123","C234","A345","C15","B177","G3003","C235","B179"};
+/*string[] sahtesipariskimligi = {"B123","C234","A345","C15","B177","G3003","C235","B179"};
 
 foreach (string sahtekisi in sahtesipariskimligi)
 {
@@ -157,7 +157,65 @@ foreach (string sahtekisi in sahtesipariskimligi)
 {
     Console.WriteLine($"Sahte kisilerden 'B':{sahtekisi}");
 }
+}*/
+
+
+///////////////////////////////////
+///
+
+//:::::C# dilinde kurallar, boşluklar ve açıklamalar ile okunabilir kod oluşturma :::::
+
+/*string firstName = "Bob";
+int widgetsPurchased = 7;
+// Mesajdaki değişikliği test ediyoruz.
+// int widgetsSold = 7;
+// Console.WriteLine($"{firstName} sold {widgetsSold} widgets.");
+Console.WriteLine($"{firstName} purchased {widgetsPurchased} widgets.");*/
+
+/*Random random = new Random();
+string[] orderIDs = new string[5];
+// Loop through each blank orderID
+for (int i = 0; i < orderIDs.Length; i++)
+{
+    // Get a random value that equates to ASCII letters A through E
+    int prefixValue = random.Next(65, 70);
+    // Convert the random value into a char, then a string
+    string prefix = Convert.ToChar(prefixValue).ToString();
+    // Create a random number, pad with zeroes
+    string suffix = random.Next(1, 1000).ToString("000");
+    // Combine the prefix and suffix together, then assign to current OrderID
+    orderIDs[i] = prefix + suffix;
+}
+// Print out each orderID
+foreach (var orderID in orderIDs)
+{
+    Console.WriteLine(orderID);
+}*/
+
+/*
+   This code reverses a message, counts the number of times 
+   a particular character appears, then prints the results
+   to the console window.
+ */
+
+string originalMessage = "The quick brown fox jumps over the lazy dog.";
+
+char[] message = originalMessage.ToCharArray();
+Array.Reverse(message);
+
+int letterCount = 0;
+
+foreach (char letter in message)
+{
+    if (letter == 'o')
+    {
+        letterCount++;
+    }
 }
 
+string newMessage = new String(message);
+
+Console.WriteLine(newMessage);
+Console.WriteLine($"'o' appears {letterCount} times.");
 
 
