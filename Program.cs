@@ -198,7 +198,7 @@ foreach (var orderID in orderIDs)
    to the console window.
  */
 
-string originalMessage = "The quick brown fox jumps over the lazy dog.";
+/*string originalMessage = "The quick brown fox jumps over the lazy dog.";
 
 char[] message = originalMessage.ToCharArray();
 Array.Reverse(message);
@@ -219,3 +219,106 @@ Console.WriteLine(newMessage);
 Console.WriteLine($"'o' appears {letterCount} times.");
 
 
+*/
+
+ /////  C# dilinde kararlar almak için Boole ifadelerini değerlendirme 
+
+//Console.WriteLine("a" == "a");
+//Console.WriteLine("a" == "A");
+//Console.WriteLine(1 == 2);
+
+//string myValue = "a";
+//Console.WriteLine(myValue == "a");
+
+/*string value1 = " a";
+string value2 = "A ";
+Console.WriteLine(value1.Trim().ToLower() == value2.Trim().ToLower());*/
+
+
+
+
+////////  Eşitsizlik işlecini kullanma
+
+/*Console.WriteLine("a" != "a");
+Console.WriteLine("a" != "A");
+Console.WriteLine(1 != 2);
+
+string myValue = "a";
+Console.WriteLine(myValue != "a");*/
+
+
+
+
+/////   Karşılaştırmaları değerlendirme
+
+/*Console.WriteLine(1 > 2);
+Console.WriteLine(1 < 2);
+Console.WriteLine(1 >= 1);
+Console.WriteLine(1 <= 1);*/
+
+
+
+
+//////    Boole değeri döndüren yöntemler
+
+/*
+string pangram = "The quick brown fox jumps over the lazy dog.";
+Console.WriteLine(pangram.Contains("fox"));
+Console.WriteLine(pangram.Contains("cow"));
+Console.WriteLine(!pangram.Contains("cow")); // Mantıksal olumsuzlama= çıktının tersini alma işlemidir.
+
+*/
+
+/*int saleAmount = 1001;
+//int discount = saleAmount > 1000 ? 100 : 50;
+//Console.WriteLine($"Discount: {discount}");
+
+Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}");*/
+
+
+
+/// Yazı-tura oyunu
+/// 
+
+/*Random random=new Random();
+Console.WriteLine((random.Next(0, 2) == 0) ? "yazi" : "tura");*/
+
+
+
+
+
+
+
+
+////  Alıştırma - Boole ifadelerini kullanarak sınama etkinliğini tamamlama
+
+string permission = "Admin|Manager";
+int level = 55;
+
+
+if (permission.Contains("Admin"))
+{
+    if (level > 55)
+    {
+        Console.WriteLine("Welcome, Super Admin user.");
+    }
+    else
+    {
+        Console.WriteLine("Welcome, Admin user.");
+    }
+}
+else if (permission.Contains("Manager"))
+{
+    if (level >= 20)
+    {
+        Console.WriteLine("Contact an Admin for access.");
+    }
+    else
+    {
+        Console.WriteLine("You do not have sufficient privileges.");
+    }
+}
+else
+{
+    Console.WriteLine("You do not have sufficient privileges.");
+}
