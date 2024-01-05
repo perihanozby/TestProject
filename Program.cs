@@ -161,7 +161,6 @@ foreach (string sahtekisi in sahtesipariskimligi)
 
 
 ///////////////////////////////////
-///
 
 //:::::C# dilinde kurallar, boşluklar ve açıklamalar ile okunabilir kod oluşturma :::::
 
@@ -221,7 +220,7 @@ Console.WriteLine($"'o' appears {letterCount} times.");
 
 */
 
- /////  C# dilinde kararlar almak için Boole ifadelerini değerlendirme 
+/////  C# dilinde kararlar almak için Boole ifadelerini değerlendirme 
 
 //Console.WriteLine("a" == "a");
 //Console.WriteLine("a" == "A");
@@ -277,8 +276,6 @@ Console.WriteLine($"Discount: {(saleAmount > 1000 ? 100 : 50)}");*/
 
 
 
-/// Yazı-tura oyunu
-/// 
 
 /*Random random=new Random();
 Console.WriteLine((random.Next(0, 2) == 0) ? "yazi" : "tura");*/
@@ -480,7 +477,7 @@ switch(product[2])
 
 Console.WriteLine($"Product: {size} {color} {type}");*/
 
-
+/*
 ///////       FOR DEYİMİ     ///////////
 
 
@@ -525,5 +522,109 @@ for(int k=1; k<=100; k++)
     else
         Console.WriteLine($"{k}");
 }
+
+*/
+
+
+
+
+
+///////////////////////////////////////////////////
+//          DO-WHİLE && WHİLE         //
+
+//do
+//{
+//    
+//} while (true);
+
+
+// 1-11 arasinda rastgele sayi oluştur.
+// sayi 7'ye eşit oluncaya kadar çalıştır ve 7'de durakla.
+
+
+
+///
+/// Yazı-tura oyunu
+/// 
+//Random random = new Random();
+//int sayi = random.Next(1, 11);
+
+/*do
+{
+    sayi = random.Next(1, 11);
+    Console.WriteLine(sayi);
+    
+} while (sayi != 7);
+*/
+/////// VEYA
+
+/*while (sayi >= 3)
+{
+    Console.WriteLine(sayi);
+    sayi = random.Next(1, 11);
+}
+Console.WriteLine($"son numara:{sayi}");*/
+
+/////// VEYA
+
+/*do
+{
+    sayi=random.Next(1, 11);
+    if(sayi >=8) continue;
+    Console.WriteLine(sayi);
+    
+} while (sayi != 7);*/
+
+/////////// Rol yapma oyunu mücadelesi sınaması   ///
+
+/* 
+-Deyimini do-while veya deyimini while bir dış oyun döngüsü olarak kullanmanız gerekir.
+-Hem karakter hem de canavar oyuna 10 can puanıyla başlar.
+-Tüm saldırılar 1 ila 10 arasında bir değere sahip olur.
+-İlk saldırıyı karakter yapar.
+-Canavarın kaybettiği can puanı ve kalan can puanı yazdırılır.
+-Canavarın can puanı sıfırdan büyükse canavar karaktere saldırır.
+-Karakterin kaybettiği can puanı ve kalan can puanı yazdırılır.
+-Canavarın veya karakterin can puanı sıfıra veya altına düşene kadar bu saldırı dizisi devam eder.
+-Kazanan taraf yazdırılır.*/
+
+
+Random random = new Random();
+int karakter = 10;
+int düsman = 10;
+
+do
+{
+    int karakteratıs = random.Next(1, 11);
+    Console.WriteLine($"Düşman kaybettiği can puanı: {karakteratıs}"+$" Düşman kalan can puanı: {düsman-karakteratıs}");
+    if(düsman <= 0) continue;
+    
+    int düsmanatıs = random.Next(1, 11);
+    Console.WriteLine($"Karakterin kaybettiği can puanı: {düsmanatıs}"+ $" Karakterin kalan can puanı:{karakter-düsmanatıs} ");
+} while (karakter == 0 && düsman == 0);
+
+Console.WriteLine(karakter>düsman ? "karakter kazandi!": "düsman kazandi:()");
+
+/*
+int hero = 10;
+int monster = 10;
+
+Random dice = new Random();
+
+do
+{
+    int roll = dice.Next(1, 11);
+    monster -= roll;
+    Console.WriteLine($"Monster was damaged and lost {roll} health and now has {monster} health.");
+
+    if (monster <= 0) continue;
+
+    roll = dice.Next(1, 11);
+    hero -= roll;
+    Console.WriteLine($"Hero was damaged and lost {roll} health and now has {hero} health.");
+
+} while (hero > 0 && monster > 0);
+
+Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");*/
 
 
