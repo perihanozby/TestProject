@@ -380,7 +380,7 @@ Console.WriteLine($"Total: {total}");*/
 
 //                   SWİTCH_CASE              
 
-int employeelevel = 100;
+/*int employeelevel = 100;
 string employeename = "perihan ozbay";
 
 string title = "";
@@ -478,4 +478,52 @@ switch(product[2])
     break;
 }
 
-Console.WriteLine($"Product: {size} {color} {type}");
+Console.WriteLine($"Product: {size} {color} {type}");*/
+
+
+///////       FOR DEYİMİ     ///////////
+
+
+for (int i = 0; i < 10; i++)
+{
+    Console.WriteLine(i);
+    if(i == 7)
+    break;
+}
+
+//////////////////////
+
+
+string[] names = {"ali", "ayse", "elif", "mert"};
+
+for (int j = names.Length-1; j >= 0; j--)   //names.lenght 0 tabanlı sayma yaptığı için 
+{                                           //(names.lenght-1() ifadesini kullanıyoruz.
+    Console.WriteLine(names[j]);
+    if(names[j] == "elif") names[j] = "salih";
+}
+Console.WriteLine("----------------------");
+foreach (var name in names)
+{
+    Console.WriteLine(name);
+}
+
+Console.WriteLine("_________________________________");
+
+///////////////////////////////////////////////////////////
+//   for ve if deyimlerini kullanarak sınama etkinliğini tamamlama   //
+
+
+for(int k=1; k<=100; k++)
+{
+
+    if ((k % 3 == 0) && (k % 5 == 0))
+        Console.WriteLine($"{k} - FizzBuzz");
+    else if (k % 3 == 0)
+        Console.WriteLine($"{k} - Fizz");
+    else if (k % 5 == 0)
+        Console.WriteLine($"{k} - Buzz");
+    else
+        Console.WriteLine($"{k}");
+}
+
+
