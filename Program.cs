@@ -587,7 +587,7 @@ Console.WriteLine($"son numara:{sayi}");*/
 -Karakterin kaybettiği can puanı ve kalan can puanı yazdırılır.
 -Canavarın veya karakterin can puanı sıfıra veya altına düşene kadar bu saldırı dizisi devam eder.
 -Kazanan taraf yazdırılır.*/
-
+/*
 
 Random random = new Random();
 int karakter = 10;
@@ -626,7 +626,7 @@ do
 } while (hero > 0 && monster > 0);
 
 Console.WriteLine(hero > monster ? "Hero wins!" : "Monster wins!");*/
-
+/*
 
 Console.WriteLine("______________________");
 
@@ -657,6 +657,110 @@ Console.WriteLine("______________________");
 int numericvalue = 0;
 bool validNumber = false;
 
-validNumber = int.TryParse(readResult, out numericvalue);
+validNumber = int.TryParse(readResult, out numericvalue);*/
+
+
+
+////---------------------------------------------------------------------------------------///////////////7
+
+//                         Kod projesi 1 - tamsayı girişini doğrulayan kod yazma
+
+/*Çözümünüz bir do-while veya while yineleme içermelidir.
+
+Yineleme bloğundan önce: çözümünüz kullanıcıdan 5 ile 10 arasında bir tamsayı değeri istemesi için bir deyim kullanmalıdır Console.WriteLine() .
+
+Yineleme bloğunun içinde:
+
+Çözümünüz kullanıcıdan giriş almak için bir Console.ReadLine() deyimi kullanmalıdır.
+Çözümünüz girişin bir tamsayının geçerli bir gösterimi olduğundan emin olmalıdır.
+Tamsayı değeri 5 ile 10 arasında değilse, kodunuzun kullanıcıdan 5 ile 10 arasında bir tamsayı değeri istemesi için bir deyimi kullanması Console.WriteLine() gerekir.
+Çözümünüz yinelemeden çıkmadan önce tamsayı değerinin 5 ile 10 arasında olduğundan emin olmalıdır.
+Yineleme kodu bloğunun altında (sonra): çözümünüz kullanıcıya giriş değerinin kabul edildiğini bildirmek için bir Console.WriteLine() deyimi kullanmalıdır.
+*/
+string? readResult;
+string valueEntered = "";
+int numvalue = 0;
+bool validNumber = false;
+Console.WriteLine("Enter an integer value between 5 and 10");
+
+do
+{
+    readResult = Console.ReadLine();
+    if(readResult != null)
+    {
+        valueEntered = readResult;
+    }
+    validNumber = int.TryParse(valueEntered, out numvalue);
+
+    if(validNumber == true)
+    {
+        if(numvalue <=5 || numvalue >=10)
+        {
+            validNumber =false;
+            Console.WriteLine($"you entered {numvalue}. Please enter a number 5 and 10.");
+        }
+    }
+
+    else
+    {
+        Console.WriteLine("sorry, you entered an invalid number, please try again");
+
+    }
+} while (validNumber == false);
+
+readResult = Console.ReadLine();
+
+
+
+
+
+
+
+////---------------------------------------------------------------------------------------///////////////7
+
+//                        Kod projesi 2 - dize girişini doğrulayan kod yazma
+/*
+Çözümünüz bir do-while veya while yineleme içermelidir.
+
+Yineleme bloğundan önce: çözümünüz kullanıcıdan üç rol adı istemesi için bir Console.WriteLine() deyim kullanmalıdır: Yönetici istrator, Manager veya User.
+
+Yineleme bloğunun içinde:
+
+Çözümünüz kullanıcıdan giriş almak için bir Console.ReadLine() deyimi kullanmalıdır.
+Çözümünüz, girilen değerin üç rol seçeneğinden biriyle eşleştiğinden emin olmalıdır.
+Çözümünüz, baştaki Trim() ve sondaki boşluk karakterlerini yoksaymak için giriş değerinde yöntemini kullanmalıdır.
+Çözümünüz büyük/küçük harf kullanımını yoksaymak için giriş değerinde yöntemini kullanmalıdır ToLower() .
+Girilen değer rol seçeneklerinden biriyle eşleşmiyorsa, kodunuzun kullanıcıdan geçerli bir giriş istemesi için bir Console.WriteLine() deyimi kullanması gerekir.
+Yineleme kodu bloğunun altında (sonra): Çözümünüz, kullanıcıya giriş değerinin kabul edildiğini bildirmek için bir Console.WriteLine() deyimi kullanmalıdır.*/
+
+
+
+
+
+
+
+
+
+////---------------------------------------------------------------------------------------///////////////7
+
+//                        Kod projesi 3 - Bir dize dizisinin içeriğini işleyen kod yazma
+/*
+çözümünüz, kodlama mantığınızın girişini göstermek için aşağıdaki dize dizisini kullanmalıdır:
+    string[] myStrings = new string[2] { "I like pizza. I like roast chicken. I like salad", "I like all three of the menu choices" };
+
+Çözümünüz, bir dize içindeki nokta karakterinin konumunu tutmak için kullanılabilecek adlı periodLocation bir tamsayı değişkeni bildirmelidir.
+
+Çözümünüz, dizideki her dize öğesini işlemek için kullanılabilecek bir dış foreach veya for döngü içermelidir. Döngülerin içinde işlenecek dize değişkeni olarak adlandırılmalıdır myString.
+
+Dış döngüde, çözümünüz değişkendeki IndexOf() ilk dönem karakterinin myString konumunu almak için sınıfının yöntemini String kullanmalıdır. Yöntem çağrısı şuna benzer olmalıdır: myString.IndexOf("."). Dizede nokta karakteri yoksa, -1 değeri döndürülür.
+
+Çözümünüz, değişkeni işlemek myString için kullanılabilecek bir iç do-while veya while döngü içermelidir.
+
+İç döngüde, çözümünüzün işlenen dizelerin her birinde yer alan her tümceyi ayıklaması ve görüntülemesi (konsola yazması) gerekir.
+
+İç döngüde çözümünüz nokta karakterini görüntülememelidir.
+
+İç döngüde, çözümünüz dize bilgilerini işlemek için , Substring()ve TrimStart() yöntemlerini kullanmalıdırRemove(). */
+
 
 
