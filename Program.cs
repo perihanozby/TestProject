@@ -1,44 +1,61 @@
-﻿// C# konsol uygulamalarında değişken verilerle çalışma (C#, Bölüm 4 ile çalışmaya başlama) 
-// C# kodunuzda doğru veri türünü seçme 
-// HEDEFLER
-//Değer türleri ve başvuru türleri arasındaki temel farklılıkları öğrenme.
-//Yeni tam sayı türleri ve kayan nokta türleri dahil olmak üzere çok sayıda yeni sayısal veri türünün özelliklerini açıklama.
-//Sayısal veri türlerinin depolayabileceği maksimum ve minimum değerleri döndüren kodu yazma.
-//Yeni bir başvuru türünün yeni örneklerini oluşturmak için new anahtar sözcüğünü kullanma.
-//Belirli bir uygulama için hangi veri türünü seçmeniz gerektiğini belirleme.
-Console.WriteLine("Signed integral types:");
+﻿/*C# derleyicisinin güvenli dönüştürmeler gerçekleştirdiği, özellikle string ve int dönüşümlerinde dikkatli olunması gerektiği,
+ daha güvenli bir işlem için dikkat gerektiren durumların bulunduğu ve veri dönüştürme işlemi için çeşitli tekniklerin kullanılabileceği anlaşılabilir.*/
 
-Console.WriteLine($"sbyte: {sbyte.MinValue} to {sbyte.MaxValue}");
-Console.WriteLine($"short: {short.MinValue} to {short.MaxValue}");
-Console.WriteLine($"int: {int.MinValue} to {int.MaxValue}");
-Console.WriteLine($"long: {long.MinValue} to {long.MaxValue}");
+//int first = 2;
+//string second = "4";
+//string result = first + second;   //Output:24
+//Console.WriteLine(result);
 
-Console.WriteLine("_______________");
-Console.WriteLine("Unsigned integral types:");
+/*int myInt = 3;
+Console.WriteLine($"int: {myInt}");
 
-Console.WriteLine($"byte: {byte.MinValue} to {byte.MaxValue}");
-Console.WriteLine($"ushort: {ushort.MinValue} to {ushort.MaxValue}");
-Console.WriteLine($"uint: {uint.MinValue} to {uint.MaxValue}");
-Console.WriteLine($"ulong: {ulong.MinValue} to {ulong.MaxValue}");
+decimal myDecimal = myInt;  // output:int: 3  decimal: 3
+Console.WriteLine($"decimal: {myDecimal}");*/
+//decimal myDecimal = 3.14m;
+//Console.WriteLine($"decimal: {myDecimal}");
 
-Console.WriteLine("");
-Console.WriteLine("Floating point types:");
-Console.WriteLine($"float  : {float.MinValue} to {float.MaxValue} (with ~6-9 digits of precision)");
-Console.WriteLine($"double : {double.MinValue} to {double.MaxValue} (with ~15-17 digits of precision)");
-Console.WriteLine($"decimal: {decimal.MinValue} to {decimal.MaxValue} (with 28-29 digits of precision)");
+//int myInt = (int)myDecimal; //output: decimal: 3,14  int: 3
+//Console.WriteLine($"int: {myInt}");
 
-//3E+4 = 3 * 10^4 = 30,000
-//1.5E-3 = 1.5 * 10^(-3) = 0.0015
+/*decimal myDecimal = 1.23456789m;
+float myFloat = (float)myDecimal;
+//output: Decimal: 1,23456789   Float  : 1,2345679
+Console.WriteLine($"Decimal: {myDecimal}");
+Console.WriteLine($"Float  : {myFloat}");*/
+/*
+int first = 5;
+int second = 7;
+string message = first.ToString() + second.ToString();
+Console.WriteLine(message); //Output: 57
 
-/*Başvuru Türlerinin Değer Türlerinden Farkı:
-Değer türü değişkeni, değerlerini doğrudan "yığın" adı verilen bir depolama alanında depolar. 
-Yığın, CPU üzerinde çalışan belleği temsil eder ve koda ayrılmıştır.
-Yığın çerçevesi, kodun yürütülmesi tamamlandığında değerleri kaldırır.
+string afirst = "5";
+string asecond = "7";
+int sum = int.Parse(afirst) + int.Parse(asecond);
+Console.WriteLine(sum); //Output: 12
 
-Başvuru türü değişkeni ise değerlerini "heap" adı verilen ayrı bir bellek bölgesinde depolar. 
-Heap, işletim sistemi üzerinde çalışan çok sayıda uygulama tarafından paylaşılan bir bellek alanıdır. 
+string value1 = "5";
+string value2 = "7";
+int result = Convert.ToInt32(value1) * Convert.ToInt32(value2);
+Console.WriteLine(result);//Output: 35
+
+int value = (int)1.5m; //// casting truncates
+Console.WriteLine(value);//Output: 1
+
+int valuex = Convert.ToInt32(1.5m); //// converting rounds up
+Console.WriteLine(valuex); //Output: 2
 */
 
-int[] data = new int[3];
-string shortenedString = "Hello World!";
-Console.WriteLine(shortenedString);
+//string value = "102";
+string value = "bad";
+int result = 0;
+if (int.TryParse(value, out result))
+{
+   Console.WriteLine($"Measurement: {result}");
+}
+else
+{
+   Console.WriteLine("Unable to report the measurement.");
+}
+
+if (result > 0)
+   Console.WriteLine($"Measurement (w/ offset): {50 + result}");
